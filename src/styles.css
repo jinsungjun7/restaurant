@@ -1,0 +1,292 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*Meyer Reset*/
+:root {
+    --gold: rgb(179, 152, 1);
+}
+/* inconsolata-regular - latin */
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    src: url('./Inconsolata-Regular.ttf'); 
+}
+
+@font-face {
+    font-family: "NotoSerif";
+    src: url("./NotoSerifKR-Bold.otf");
+
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NotoSerifReg';
+    src: url('./NotoSerifKR-Regular.otf');
+}
+
+html {
+    height:100%;
+}
+body {
+    height: 100%;
+    width:100%;
+    overflow: auto;
+    position:relative;
+}
+
+body::before {
+    content: "";
+    background: url('./pastry-background.jpg') no-repeat center fixed;
+    background-size:cover;
+    position: fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    filter: brightness(40%);
+}
+
+#content { 
+    position:relative;
+    height:100%;
+    width:100%;
+    display: grid;
+    grid-template-rows: .5fr 4fr .5fr; 
+}
+
+.title, .footer, .homeTitle {
+    color:var(--gold);
+}
+
+.tab, .footer, .menuBtn, .homeDescription {
+    font-family: "Inconsolata";
+    /* font-family:sans-serif; */
+}
+
+.header {
+    width:100%;
+    grid-row: 1;
+    border-bottom: 3px solid var(--gold);
+    display:flex;
+    gap: min(10%, 400px);
+    
+}
+
+.title {
+    font-family: "NotoSerif";
+    font-size:min(6rem, 96px);
+    padding:16px;
+}
+
+.menuBar {
+    
+    flex-grow: .5;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+
+.tab {
+    color: white;
+    font-size:min(3.5rem, 56px);
+    padding-bottom: 16px;
+}
+
+.tab:hover {
+    font-weight:600;
+}
+
+/* Home tab */
+.body#home {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:32px;
+
+}
+
+.menuBar#home #home, .menuBar#menu #menu, .menuBar#contact #contact {
+    font-weight:900;
+    color:var(--gold);
+}
+
+
+.homeTitle {
+    font-size:4rem;
+    font-family: 'NotoSerifReg';
+}
+
+.homeDescription {
+    font-size:1.75rem;
+    color:white;
+}
+
+.menuBtn {
+    background-color: rgba(204,159,118,75%);
+    border-radius:20px;
+    padding:8px 16px;
+}
+
+.menuBtn:active {
+    background-color: rgb(204,159,118);
+}
+
+/* Menu tab */
+.body#menu {
+    display:grid;
+    justify-content:center;
+    align-items:flex-start;
+    width:50%;
+    justify-self:center;
+    padding:64px;
+
+}
+
+/* Both contact us page and menu page default color/font  */
+.menuItem, .menuTitle, .location, .hours, .contact  {
+    color:white;
+    font-family: 'Inconsolata';
+}
+
+.menuItem {
+    position: relative;
+    padding:64px;
+}
+
+.menuItem::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left:25%;
+    width: 50%;
+    border-bottom: 5px solid var(--gold);
+}
+
+.menuTitle {
+    font-size:2.5rem;
+    padding:16px;
+}
+
+.menuDesc {
+    font-size: 1.5rem;
+}
+
+.menuImg {
+    float: left;
+    width: max(350px, 10%);
+    height: 300px;
+    padding-right:16px;
+    object-fit:cover;
+}
+
+/* Contact tab */
+.body#contact {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    width:75%;
+    height:75%;
+    justify-self:center;
+    align-self: center;
+    
+}
+
+.body#contact #content .header .menuBar #contact{
+    font-weight:900;
+}
+
+.map {
+    grid-row: 1 / 1;
+    grid-column: 2 / 2;
+    justify-self:center;
+    align-self:end;
+    width:max(450px, 75%);
+    height:max(300px, 50%)
+}
+
+.hours, .location, .contact {
+    justify-self: center;
+    padding-top:64px;
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+.address, .hoursContent, .contactContent {
+    font-weight:400;
+    padding-top:16px;
+    font-size:1.75rem;
+}
+
+.hours {
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+}
+
+.location {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+}
+
+.contact {
+    grid-row: 2 / 2;
+    grid-column: 3 / 3;
+}
+
+/* footer */
+.footer {
+    align-self:flex-end;
+    height:75px;
+    grid-row: 3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-top: 3px solid var(--gold);
+    font-size:2rem;
+}
