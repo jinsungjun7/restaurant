@@ -184,8 +184,7 @@ body::before {
     align-items:flex-start;
     width:50%;
     justify-self:center;
-    padding:64px;
-
+    padding:32px 64px 96px 64px;
 }
 
 /* Both contact us page and menu page default color/font  */
