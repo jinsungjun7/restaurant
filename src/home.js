@@ -6,7 +6,7 @@ export default function home() {
 
     const description = document.createElement('div');
     description.classList.add('homeDescription');
-    description.textContent = 'We serve award-winning Korean pastries and desserts.';
+    description.textContent = 'We serve award-winning Korean pastries and desserts';
 
     const btn = document.createElement('div');
     btn.textContent = 'Our Menu';
